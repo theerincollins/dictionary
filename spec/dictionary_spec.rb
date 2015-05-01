@@ -14,7 +14,7 @@ describe Word do
       expect(Word.all).to(eq(test_word))
     end
     it('will be empty at first') do
-      @@words = []
+      expect(Word.all).to(eq([]))
     end
   end
 
