@@ -1,13 +1,18 @@
-<% if @words.length() == 0 %>
+
+<% if Word.all().length() == 0 %>
   <h2>This is an Empty Dictionary</h2>
 <% else %>
   <h2>This is a Dictionary</h2>
-<% end %>
 
-<ul>
-<% @words.each do |word| %>
-  <li><a href='/word/<%= word.id() %>'><%= word.word_name %></a></li>
-<% end %>
-</ul>
+  <ul>
+    <% @words.each do |word| %>
+    <li><a href='/word/<%= word.id() %>'><%= word.word_name %></a></li>
+    <% end %>
+  </ul>
 
+  <% if Word.all().length() != 0 %>
+  <a href='/reset' role = 'button' class = 'btn btn-danger'> Erase Contacts! </a>
+  <% end %>
+
+  <% end %>
 <a href="/word/new" role="button" class="btn btn-primary">Add to Dictionary</a>

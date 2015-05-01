@@ -38,3 +38,8 @@ post('/add_definition') do
   @definitions = @new_word.get_definitions()
   erb(:word)
 end
+
+get('/reset') do
+  Word.clear()
+  erb(:index)
+end
