@@ -1,5 +1,6 @@
 require('rspec')
 require('word')
+require('definition')
 
 describe Word do
 
@@ -56,4 +57,34 @@ describe Word do
       expect(Word.find(test_word2.id())).to(eq(test_word2))
     end
   end
+end
+
+describe Definition do
+
+  before do
+    Definition.clear()
+  end
+
+  describe('.clear') do
+    it('will clear array of definitions') do
+      Definition.new("this and that").save()
+      Definition.clear
+      expect(Definition.all()).to(eq([]))
+    end
+  end
+
+  describe('.all') do
+    it('will be empty at first') do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('will save a definition to an array of definitions') do
+      test_definition = Definition.new("those things over there")
+      test_definition.save()
+      expect(Definition.all).to(eq([test_definition]))
+    end
+  end
+
 end
