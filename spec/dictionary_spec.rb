@@ -69,6 +69,16 @@ describe Word do
       expect(test_word.get_definitions()).to(eq([test_definition1, test_definition2]))
     end
   end
+
+  describe('.duplicate?') do
+    it('will return true if the word entered is alread in the dictionary') do
+      test_word1 = Word.new("dog")
+      test_word1.save()
+      test_word2 = Word.new("dog")
+      test_word2.save()
+      expect(Word.duplicate?(test_word2.word_name())).to(eq(true))
+    end
+  end
 end
 
 describe Definition do

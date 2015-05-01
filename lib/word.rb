@@ -40,4 +40,14 @@ class Word
     @word_definitions
   end
 
+  define_singleton_method(:duplicate?) do |word_name|
+    duplicate = nil
+    @@words.each do |word|
+      if word.word_name == word_name
+        duplicate = true
+      end
+    end
+    duplicate
+  end
+
 end
