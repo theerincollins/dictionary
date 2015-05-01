@@ -50,4 +50,10 @@ class Word
     duplicate
   end
 
+  define_singleton_method(:delete_duplicate) do |word|
+    if Word.duplicate?(word.word_name())
+      @@words.pop
+    end
+    @@words
+  end
 end

@@ -79,6 +79,19 @@ describe Word do
       expect(Word.duplicate?(test_word2.word_name())).to(eq(true))
     end
   end
+
+  describe('.delete_duplicate') do
+    it('will delete the last word if it was a duplicate') do
+      test_word1 = Word.new("cat")
+      test_word1.save()
+      test_word2 = Word.new("dog")
+      test_word2.save()
+      test_word3 = Word.new("dog")
+      test_word3.save()
+      Word.delete_duplicate(test_word3)
+      expect(Word.all).to(eq([test_word1, test_word2]))
+    end
+  end
 end
 
 describe Definition do

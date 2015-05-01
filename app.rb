@@ -20,6 +20,7 @@ post('/save_word') do
   definition = Definition.new(params.fetch("definition"))
   @new_word.add_definition(definition)
   @definitions = @new_word.get_definitions()
+  @duplicate = Word.duplicate?(@new_word.word_name())
   @new_word.save()
   erb(:word)
 end
