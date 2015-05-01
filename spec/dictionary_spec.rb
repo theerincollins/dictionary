@@ -87,4 +87,11 @@ describe Definition do
     end
   end
 
+  describe('#description') do
+    it('will return the description of the definition') do
+      test_definition = Definition.new("those things over there")
+      expect(test_definition.description).to(eq("those things over there"))
+    end
+  end
+
 end
