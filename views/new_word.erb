@@ -2,9 +2,14 @@
 
 <form action="/save_word" method="post">
   <div class="form-group">
+
     <label for="word_name">Enter a Word:</label>
     <input class="form-control word-input" type="text" id="word_name" name="word_name"
     placeholder = "ex: Tofurkey">
+
+    <label for="definition">Enter the Definition</label>
+    <input class="form-control def-input" type="text" id="definition" name="definition"
+    placeholder="ex: It tastes a little bit like turkey and a lotta bit like cardboard.">
   </div>
 
   <button type="reset" value="reset" class="btn btn-warning">Reset</button>
