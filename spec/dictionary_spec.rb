@@ -57,6 +57,18 @@ describe Word do
       expect(Word.find(test_word2.id())).to(eq(test_word2))
     end
   end
+
+  describe('#add_definition') do
+    it("will add a definition to a word's array of definitions") do
+      test_definition1 = Definition.new("it barks a lot")
+      test_definition2 = Definition.new("it pees a lot")
+      test_word = Word.new("dog")
+      test_word.save()
+      test_word.add_definition(test_definition1)
+      test_word.add_definition(test_definition2)
+      expect(test_word.get_definitions()).to(eq([test_definition1, test_definition2]))
+    end
+  end
 end
 
 describe Definition do
