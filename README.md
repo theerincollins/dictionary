@@ -2,10 +2,12 @@ Dictionary
 
 Description: Using Ruby this method will list the words in a dictionary. A user can select a word to see the definitions and add more definitions to existing words. A user can also add a new word and definition.
 
+The method will alert the user if they enter a word twice.
+
 
 Author: Erin Collins Date: May 1, 2015
 
-Link to Heroku: 
+Link to Heroku: https://erin-dictionary.herokuapp.com/word/new
 
 Setup Instructions: -- Download all files -- Run bundle install -- Run Ruby app.rb -- Enter localhost:4567 into address bar
 
